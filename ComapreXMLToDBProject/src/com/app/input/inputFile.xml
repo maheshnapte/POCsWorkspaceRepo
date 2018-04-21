@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+   <employees>
+	
+	<employee>
+		<empID>1</empID>
+		<empName>Jani</empName>
+		<empDesignation>Software Engineer</empDesignation>
+	</employee>
+	
+	<employee>
+		<empID>2</empID>
+		<empName>Vivek</empName>
+		<empDesignation>Sr. Software Engineer</empDesignation>
+	</employee>
+	
+	<employee>
+		<empID>3</empID>
+		<empName>Raj</empName>
+		<empDesignation>Manager</empDesignation>
+	</employee>
+	
+	<employee>
+		<empID>5</empID>
+		<empName>Kishore</empName>
+		<empDesignation>Software Engineer</empDesignation>
+	</employee>
+   
+   </employees>
