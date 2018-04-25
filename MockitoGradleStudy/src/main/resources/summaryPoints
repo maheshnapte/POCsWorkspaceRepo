@@ -1,0 +1,6 @@
+Note: I am not sure whether the path for resources is corrrect or not.
+
+Summary Points:
+1. For jUnit testing, stub option is not good a we need to code for stub and in case if there are many methods in service class,
+   then we explicitly need to implement all the methods as Stub class implements Service interface.
+2. 
