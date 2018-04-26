@@ -10,7 +10,7 @@ import java.util.List;
 import org.junit.Test;
 
 //Mocking List
-public class FirstMockitoTest {
+public class ListMock {
 
 	@Test
 	public void testListSizeMock() {
