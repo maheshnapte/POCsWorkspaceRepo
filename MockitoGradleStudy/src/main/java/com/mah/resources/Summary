@@ -1,0 +1,8 @@
+Summary Points:
+
+Disadvantage of Stubs for jUnit testing:
+
+1. When we use stubs forjUnit testing, we need to implement each service that we want to mock.
+   and when there are many methods in the service class we explicitly need to do that for all methods.
+   So we use mockito.
+    
