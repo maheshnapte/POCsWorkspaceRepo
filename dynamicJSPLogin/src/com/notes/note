@@ -1,0 +1,7 @@
+If you are using Servlet 3.0and above version and Tomcat 7.0 and above version, then you need not to create web.xml.
+@WebServlet("") annotation is the replacement for web.xml
+
+All logic behind web.xml is explained at following link:
+https://stackoverflow.com/questions/14854760/not-getting-automatically-web-xml-file-while-creating-servlet-in-eclipse-juno-4/14854907#14854907
+
+
