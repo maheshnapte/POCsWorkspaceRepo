@@ -11,6 +11,7 @@ import javax.ws.rs.core.UriBuilder;
 
 import org.glassfish.jersey.client.ClientConfig;
 
+
 public class RESTfulJerseyClient {
 
 	private static final String webServiceURI = "http://localhost:8083/RESTful_Jersey_Hello_World";

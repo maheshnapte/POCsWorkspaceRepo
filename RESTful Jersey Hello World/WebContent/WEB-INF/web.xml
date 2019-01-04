@@ -23,4 +23,5 @@
     <servlet-name>RESTful Jersey Hello World Service</servlet-name>
     <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
+  
 </web-app>
