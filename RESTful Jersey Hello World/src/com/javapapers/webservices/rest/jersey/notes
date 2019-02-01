@@ -2,5 +2,11 @@ Used following resource for developement:
 http://www.vogella.com/tutorials/REST/article.html
 //
 
+// Note:
+
+Before running a dynamic webapp in server in eclipse, if it wants any libraries which are not present on tomcat server,
+you need to copy that libraries to WebContent->WEB-INF-lib folder.
+Note: When you add these libraries to build path and build projec, these ibraries not not be copied to lib folder automatically.
+This might(not sure) be automated by making changes in .classpath folder.
  
  
