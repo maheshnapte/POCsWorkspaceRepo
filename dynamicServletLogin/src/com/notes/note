@@ -5,3 +5,6 @@ All logic behind web.xml is explained at following link:
 https://stackoverflow.com/questions/14854760/not-getting-automatically-web-xml-file-while-creating-servlet-in-eclipse-juno-4/14854907#14854907
 
 
+How does Apache tomcat works:
+	basic: https://en.wikipedia.org/wiki/Apache_Tomcat
+	little deep: http://java-latte.blogspot.com/2014/10/introduction-to-architecture-of-apache-tomcat-with-server.xml.html
