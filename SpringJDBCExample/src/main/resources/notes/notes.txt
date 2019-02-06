@@ -1,0 +1,6 @@
+V Imp spring + mysql project:(In our project, we have used spring+jdbc (here oracle))
+https://www.mkyong.com/spring/maven-spring-jdbc-example/
+
+In this pom.xml we were getting error for ojdbc14.jar connector dependency, so we added it in buildpath/classpath manually.
+If you download this project n other machine, please make  sure that you also do the same there.
+
