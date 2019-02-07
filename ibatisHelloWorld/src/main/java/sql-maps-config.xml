@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+
+	<settings useStatementNamespaces="true" />
+
+	<!-- old for mysqp db connection. Default downloaded from online project 
+		<transactionManager type="JDBC"> <dataSource type="SIMPLE"> <property name="JDBC.Driver" 
+		value="com.mysql.jdbc.Driver"/> <property name="JDBC.ConnectionURL" value="jdbc:mysql://localhost:3306/demoDB"/> 
+		<property name="JDBC.Username" value="root"/> <property name="JDBC.Password" 
+		value="lg225295"/> </dataSource> </transactionManager> -->
+
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver"
+				value="oracle.jdbc.pool.OracleDataSource" />
+			<property name="JDBC.ConnectionURL"
+				value="jdbc:oracle:thin:@localhost:1521:xe" />
+			<property name="JDBC.Username" value="system" />
+			<property name="JDBC.Password" value="system" />
+		</dataSource>
+	</transactionManager>
+
+	<sqlMap resource="user.xml" />
+
+</sqlMapConfig>
+
+
+<!-- <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource"> <property 
+	name="dataSourceName" value="ds" /> <property name="URL" value="jdbc:oracle:thin:@localhost:1521:xe" 
+	/> <property name="user" value="system" /> <property name="password" value="system" 
+	/> </bean> -->
+
+
+<!-- <configuration> <typeAliases> <typeAlias alias = "class_alias_Name" 
+	type = "absolute_clas_Name"/> </typeAliases> <environments default = "default_environment 
+	_name"> <environment id = "environment_id"> <transactionManager type = "JDBC/MANAGED"/> 
+	<dataSource type = "UNPOOLED/POOLED/JNDI"> <property name = "driver" value 
+	= "database_driver_class_name"/> <property name = "url" value = "database_url"/> 
+	<property name = "username" value = "database_user_name"/> <property name 
+	= "password" value = "database_password"/> </dataSource> </environment> </environments> 
+	<mappers> <mapper resource = "path of the configuration XML file"/> </mappers> 
+	</configuration> -->
