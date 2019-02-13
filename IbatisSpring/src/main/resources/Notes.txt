@@ -1,0 +1,5 @@
+V Nice article explaining project:
+https://javabeat.net/spring-ibatis-integration/
+
+You need to add Ojdbc14 connector in build path before runnung project.
+ 
