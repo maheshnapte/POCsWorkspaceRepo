@@ -1,0 +1,12 @@
+Reference: https://dzone.com/articles/build-rest-web-service-using-spring
+
+
+POST: http://localhost:9090/SpringRestExample/rest/emp/create 
+
+http://localhost:9091/springrestAr/rest/payment/pay?key=SHARED_KEY
+
+{
+"id": 1,
+"name": "test",
+"createdDate": 1526523742180
+}st/payment/
