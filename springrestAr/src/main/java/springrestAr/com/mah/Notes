@@ -9,4 +9,6 @@ http://localhost:9091/springrestAr/rest/payment/pay?key=SHARED_KEY
 "id": 1,
 "name": "test",
 "createdDate": 1526523742180
-}st/payment/
+}
+
+st/payment/
