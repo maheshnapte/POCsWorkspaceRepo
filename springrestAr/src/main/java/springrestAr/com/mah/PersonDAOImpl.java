@@ -20,6 +20,10 @@ public class PersonDAOImpl implements PersonDAO {
 	private final String SQL_GET_ALL = "select * from people1";
 	private final String SQL_INSERT_PERSON = "insert into people1(id, first_name, last_name, age) values(?,?,?,?)";
 
+	
+	@Autowired
+	SampleEnt sampleEnt;
+	
 	@Autowired
 	public PersonDAOImpl(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
@@ -32,6 +36,8 @@ public class PersonDAOImpl implements PersonDAO {
 	}
 
 	public List<Person> getAllPersons() {
+	
+		
 		List<Person> personList = jdbcTemplate.query(SQL_GET_ALL, new PersonMapper());
 		System.out.println("personList: " + personList);
 		return personList;

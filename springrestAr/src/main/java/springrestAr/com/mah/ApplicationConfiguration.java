@@ -1,6 +1,5 @@
 package springrestAr.com.mah;
 
-
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +11,14 @@ import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.myjar.client.SamleBean1;
+
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "springrestAr.com.mah")
 @PropertySource("classpath:database.properties")
 public class ApplicationConfiguration {
-	
+
 	@Autowired
 	Environment environment;
 
@@ -35,5 +36,11 @@ public class ApplicationConfiguration {
 		driverManagerDataSource.setDriverClassName(environment.getProperty(DRIVER));
 		return driverManagerDataSource;
 	}
-}
 
+	@Bean
+	SamleBean1 samleBean1() {
+		SamleBean1 s = new SamleBean1();
+		return s;
+	}
+
+}
