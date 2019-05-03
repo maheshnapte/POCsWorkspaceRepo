@@ -3,10 +3,12 @@ package springrestAr.com.mah;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.core.env.Environment;
 import org.springframework.expression.common.TemplateParserContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -15,8 +17,15 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "springrestAr.com.mah")
-@PropertySource("classpath:database.properties")
+
+@PropertySources({ @PropertySource("classpath:database.properties"), @PropertySource("classpath:file2.properties") })
 public class ApplicationConfiguration {
+
+	@Value("${id}")
+	private String id;
+
+	@Value("Mahesh Hardcoded")
+	private String name;
 
 	@Autowired
 	Environment environment;
@@ -36,12 +45,12 @@ public class ApplicationConfiguration {
 		return driverManagerDataSource;
 	}
 
-	
-	// Following is perfect example to we need to create bean as follows using @Bean to autowire it in project. Here, see PaymentDAOImpl.java
+	// Following is perfect example to we need to create bean as follows using @Bean
+	// to autowire it in project. Here, see PaymentDAOImpl.java
 	@Bean
 	TemplateParserContext templateParserContext() {
 		System.out.println("Bean creation started.");
-		return new TemplateParserContext("Hi Mahesh", "Bye Mahesh");
+		return new TemplateParserContext(id, "Bye" + name);
 	}
 
 }

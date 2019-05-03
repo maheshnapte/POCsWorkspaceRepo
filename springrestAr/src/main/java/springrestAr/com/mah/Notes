@@ -11,4 +11,7 @@ http://localhost:9091/springrestAr/rest/payment/pay?key=SHARED_KEY
 "createdDate": 1526523742180
 }
 
-st/payment/
+
+1. https://blog.jayway.com/2014/02/16/spring-propertysource/
+2. https://www.baeldung.com/spring-value-annotation
+
