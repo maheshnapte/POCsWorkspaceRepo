@@ -8,10 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.expression.common.TemplateParserContext;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
-import com.myjar.client.SamleBean1;
 
 @Configuration
 @EnableWebMvc
@@ -37,10 +36,12 @@ public class ApplicationConfiguration {
 		return driverManagerDataSource;
 	}
 
+	
+	// Following is perfect example to we need to create bean as follows using @Bean to autowire it in project. Here, see PaymentDAOImpl.java
 	@Bean
-	SamleBean1 samleBean1() {
-		SamleBean1 s = new SamleBean1();
-		return s;
+	TemplateParserContext templateParserContext() {
+		System.out.println("Bean creation started.");
+		return new TemplateParserContext("Hi Mahesh", "Bye Mahesh");
 	}
 
 }

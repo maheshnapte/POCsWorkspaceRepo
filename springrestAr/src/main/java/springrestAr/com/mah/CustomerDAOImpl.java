@@ -5,10 +5,9 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.common.TemplateParserContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-
-import com.myjar.client.SamleBean1;
 
 import springrestAr.com.mah.model.Customer;
 
@@ -18,7 +17,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 	SampleEnt sampleEnt;
 
 	@Autowired
-	SamleBean1 samlBean1;
+	TemplateParserContext templateParserContext;
 
 	JdbcTemplate jdbcTemplate;
 
@@ -56,7 +55,13 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public List<Customer> getAllCustomers() {
 		// TODO Auto-generated method stub
 		System.out.println("sampleEnt: " + sampleEnt);
-		System.out.println("SamleBean1: " + samlBean1);
+
+		System.out.println("TemplateParserContext:" + templateParserContext);
+
+		System.out
+				.println("templateParserContext.getExpressionPrefix(): " + templateParserContext.getExpressionPrefix());
+		System.out
+				.println("templateParserContext.getExpressionSuffix(): " + templateParserContext.getExpressionSuffix());
 
 		List<Customer> customerList = jdbcTemplate.query(SQL_GET_ALL, new CustomerMapper());
 		System.out.println("customerList: " + customerList);
