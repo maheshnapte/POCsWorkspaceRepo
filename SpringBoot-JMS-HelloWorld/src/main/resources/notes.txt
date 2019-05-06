@@ -1,0 +1,6 @@
+Resource:
+https://www.javainuse.com/spring/sprboot_activemq
+
+It was working fine but later made some changes to make it webapp.
+
+Need to work on it to make it working
