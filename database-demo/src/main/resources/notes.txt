@@ -1,0 +1,16 @@
+Q. How to connect to embedded h2 database?
+http://localhost:{server.port}/h2-console
+db url:jdbc:h2:mem:testdb
+username:sa
+password:
+----
+
+resource:
+https://github.com/in28minutes/jpa-with-hibernate/tree/master/01-from-jdbc-to-jpa
+here step 18 code is downloaded.
+
+Note1: when you tart the spring boot application, then only you can connect to db and when you close the application 
+the database is deleted.
+
+Note2: Out of 2 one @SpringBootApplication need to comment to 'clean install' and run the application properly.
+
