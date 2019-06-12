@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/4040761/control-the-hibernate-sessionwhen-to-close-it-manually
+
+https://developer.jboss.org/wiki/Non-transactionaldataaccessandtheauto-commitmode?_sscc=t
+
+Nice Video explaining hibernate: (Dirty checking and persistence object)
+https://www.youtube.com/watch?v=gi7LCJVecm8
+
+Nice video on comparison between JDBC and hibernate Persistence memory:
+https://www.youtube.com/watch?v=N16Q6pnnR7M
+
+Nice Article for Project creation token generation:
+https://codeyard.wordpress.com/2012/07/31/spring-hibernate-end-to-end-integration-using-maven-spring-mvc-jsp-oracle11g-a-step-by-step-guide/
+
