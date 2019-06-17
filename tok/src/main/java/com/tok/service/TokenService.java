@@ -6,5 +6,7 @@ public interface TokenService {
 
 	Token getToken();
 	
+	 void add(Token token);
+	
 	
 }

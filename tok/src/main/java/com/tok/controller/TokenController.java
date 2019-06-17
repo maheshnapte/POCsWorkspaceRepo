@@ -1,6 +1,9 @@
 package com.tok.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +17,9 @@ import com.tok.service.TokenServiceImpl;
 @RequestMapping("/token")
 public class TokenController {
 
-	/*@Autowired
+	@Autowired
 	TokenService tokenService;
-	*/
+	
 	@RequestMapping(value = "/getme", method = RequestMethod.GET)
 	public String getAllCustomers() {
 		System.out.println("Before calling getAllCustomers");
@@ -32,6 +35,17 @@ public class TokenController {
 	@RequestMapping(value = "/getToken", method = RequestMethod.GET)
 	public Token getToken() {
 		System.out.println("Before calling getTokenService");
-		return new TokenServiceImpl().getToken();
+		return tokenService.getToken();
+	}
+	
+	@RequestMapping(value = "/addToken", method = RequestMethod.POST)
+	public void addToken(@RequestBody Token t) {
+		System.out.println("Before calling getTokenService");
+		//Token t = new Token();
+	/*	t.setTokId(100);
+		t.setTokenId("100");
+		Date tokenTimeStamp = new Date();
+		t.setTokenTimeStamp(tokenTimeStamp);*/
+		tokenService.add(t);
 	}
 }
