@@ -3,10 +3,12 @@ package com.tok.controller;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.tok.model.Token;
 import com.tok.service.TokenService;
@@ -19,6 +21,13 @@ public class TokenController {
 
 	@Autowired
 	TokenService tokenService;
+	
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public ModelAndView getStrartPage() {
+		ModelAndView m = new ModelAndView();
+		m.setViewName("index");
+		return m;
+	}
 	
 	@RequestMapping(value = "/getme", method = RequestMethod.GET)
 	public String getAllCustomers() {

@@ -17,22 +17,33 @@ import org.springframework.dao.annotation.PersistenceExceptionTranslationPostPro
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
 @PropertySource({ "classpath:database.properties" })
-/*@ComponentScan(basePackages = "com.tok")
-*/@ComponentScans(value = { 
-	      @ComponentScan("com.tok.dao"),
-	      @ComponentScan("com.tok.service"), @ComponentScan("com.tok.controller") 
-	    })
-public class ApplicationConfiguration {
+/*
+ * @ComponentScan(basePackages = "com.tok")
+ */@ComponentScans(value = { @ComponentScan("com.tok.dao"), @ComponentScan("com.tok.service"),
+		@ComponentScan("com.tok.controller") })
+public class ApplicationConfiguration implements WebMvcConfigurer {
 
 	@Autowired
 	private Environment env;
+
+	@Bean
+	public ViewResolver internalResourceViewResolver() {
+		InternalResourceViewResolver bean = new InternalResourceViewResolver();
+		bean.setViewClass(JstlView.class);
+		bean.setPrefix("/WEB-INF/view/");
+		bean.setSuffix(".html");
+		return bean;
+	}
 
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
@@ -70,7 +81,7 @@ public class ApplicationConfiguration {
 	}
 
 	Properties hibernateProperties() {
-		
+
 		return new Properties() {
 			{
 				setProperty("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));

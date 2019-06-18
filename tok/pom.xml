@@ -7,9 +7,11 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<springframework.version>5.1.4.RELEASE</springframework.version>	
-<!--  		<springframework.version>4.3.12.RELEASE</springframework.version>
- -->        <jackson.library>2.7.5</jackson.library>
+		<springframework.version>5.1.4.RELEASE</springframework.version>
+		<!-- <springframework.version>4.3.12.RELEASE</springframework.version> 
+			<jackson.library>2.7.5</jackson.library> -->
+		<jackson.library>2.9.4</jackson.library>
+
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -61,7 +63,7 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- hibernate dependencies -->
 		<!-- Continuing with Hibernate 4, the Maven dependencies are simple: -->
 		<dependency>
@@ -69,6 +71,13 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.10.Final</version>
 			<!-- <version>2.5.1</version> -->
+		</dependency>
+
+		<!-- Newly Added -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 
 		<!-- Then, to enable Hibernate to use its proxy model, we need the javassist 
@@ -118,44 +127,17 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-	<!--  <build>
-        <plugins>
-            <plugin>
-                <artifactId>maven-eclipse-plugin</artifactId>
-                <version>2.9</version>
-                <configuration>
-                    <additionalProjectnatures>
-                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-                    </additionalProjectnatures>
-                    <additionalBuildcommands>
-                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-                    </additionalBuildcommands>
-                    <downloadSources>true</downloadSources>
-                    <downloadJavadocs>true</downloadJavadocs>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
-                <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
-                    <compilerArgument>-Xlint:all</compilerArgument>
-                    <showWarnings>true</showWarnings>
-                    <showDeprecation>true</showDeprecation>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.2.1</version>
-                <configuration>
-                    <mainClass>org.test.int1.Main</mainClass>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-	 -->
+
+	<!-- <build> <plugins> <plugin> <artifactId>maven-eclipse-plugin</artifactId> 
+		<version>2.9</version> <configuration> <additionalProjectnatures> <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature> 
+		</additionalProjectnatures> <additionalBuildcommands> <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand> 
+		</additionalBuildcommands> <downloadSources>true</downloadSources> <downloadJavadocs>true</downloadJavadocs> 
+		</configuration> </plugin> <plugin> <groupId>org.apache.maven.plugins</groupId> 
+		<artifactId>maven-compiler-plugin</artifactId> <version>2.5.1</version> <configuration> 
+		<source>1.6</source> <target>1.6</target> <compilerArgument>-Xlint:all</compilerArgument> 
+		<showWarnings>true</showWarnings> <showDeprecation>true</showDeprecation> 
+		</configuration> </plugin> <plugin> <groupId>org.codehaus.mojo</groupId> 
+		<artifactId>exec-maven-plugin</artifactId> <version>1.2.1</version> <configuration> 
+		<mainClass>org.test.int1.Main</mainClass> </configuration> </plugin> </plugins> 
+		</build> -->
 </project>

@@ -11,3 +11,6 @@ https://www.youtube.com/watch?v=N16Q6pnnR7M
 Nice Article for Project creation token generation:
 https://codeyard.wordpress.com/2012/07/31/spring-hibernate-end-to-end-integration-using-maven-spring-mvc-jsp-oracle11g-a-step-by-step-guide/
 
+V. Imp Article for SpringMVC vs SpringRest:
+https://www.genuitec.com/spring-frameworkrestcontroller-vs-controller/
+
