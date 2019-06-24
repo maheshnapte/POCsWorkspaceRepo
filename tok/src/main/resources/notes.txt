@@ -14,3 +14,5 @@ https://codeyard.wordpress.com/2012/07/31/spring-hibernate-end-to-end-integratio
 V. Imp Article for SpringMVC vs SpringRest:
 https://www.genuitec.com/spring-frameworkrestcontroller-vs-controller/
 
+V. Important to configure static resources:
+https://www.baeldung.com/spring-mvc-static-resources

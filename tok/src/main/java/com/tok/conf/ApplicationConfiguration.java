@@ -1,6 +1,7 @@
 package com.tok.conf;
 
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import javax.sql.DataSource;
 
@@ -14,12 +15,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.http.CacheControl;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
@@ -36,6 +41,13 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 	@Autowired
 	private Environment env;
 
+	
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		// TODO Auto-generated method stub
+		registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
+	}
+	
 	@Bean
 	public ViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver bean = new InternalResourceViewResolver();
@@ -45,6 +57,47 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 		return bean;
 	}
 
+
+
+	/*
+	 * @Override public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	 * 
+	 * // Register resource handler for CSS and JS
+	 * registry.addResourceHandler("/assets/**").addResourceLocations(
+	 * "classpath:/assets/", "D:/statics/") .setCacheControl(CacheControl.maxAge(2,
+	 * TimeUnit.HOURS).cachePublic());
+	 * 
+	 * // Register resource handler for images
+	 * registry.addResourceHandler("/images/**").addResourceLocations(
+	 * "/WEB-INF/images/") .setCacheControl(CacheControl.maxAge(2,
+	 * TimeUnit.HOURS).cachePublic()); }
+	 */
+
+	/*
+	 * @Override public void addResourceHandlers(ResourceHandlerRegistry registry) {
+	 * // TODO Auto-generated method stub
+	 * 
+	 * WebMvcConfigurer.super.addResourceHandlers(registry);
+	 * registry.addResourceHandler("/assets/**").addResourceLocations("/assets/").
+	 * setCachePeriod(3600) .resourceChain(true).addResolver(new
+	 * PathResourceResolver()); }
+	 */
+
+	/*
+	 * @Override public void
+	 * configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+	 * // TODO Auto-generated method stub
+	 * 
+	 * WebMvcConfigurer.super.configureDefaultServletHandling(configurer);
+	 * 
+	 * configurer.enable(); }
+	 */
+
+	/*
+	 * @Override public void
+	 * configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+	 * configurer.enable(); }
+	 */
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
