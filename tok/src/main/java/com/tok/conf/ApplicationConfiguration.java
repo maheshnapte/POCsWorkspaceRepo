@@ -43,6 +43,7 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 	private Environment env;
 
 	
+	
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		// TODO Auto-generated method stub

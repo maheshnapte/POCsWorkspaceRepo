@@ -37,6 +37,7 @@ public class TokenController {
 		return "Hi Mahesh";
 	}
 	
+	
 	@RequestMapping(value = "/isPriviledged", method = RequestMethod.GET)
 	public boolean isPriviledged() {
 		System.out.println("Before calling isPriviledged");
