@@ -98,6 +98,12 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 	 * configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 	 * configurer.enable(); }
 	 */
+	
+	 @Override
+	    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+	        configurer.enable();
+	    }
+	
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
