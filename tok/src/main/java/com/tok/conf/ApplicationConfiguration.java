@@ -23,6 +23,7 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -45,10 +46,18 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		// TODO Auto-generated method stub
-		registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
+		registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/assets/");
 	}
 	
-	@Bean
+
+	@Override
+	public void configureViewResolvers(ViewResolverRegistry registry) {
+		// TODO Auto-generated method stub
+		// WebMvcConfigurer.super.configureViewResolvers(registry);
+		registry.jsp("/WEB-INF/view/", ".jsp");
+	}
+	
+/*	@Bean
 	public ViewResolver internalResourceViewResolver() {
 		InternalResourceViewResolver bean = new InternalResourceViewResolver();
 		bean.setViewClass(JstlView.class);
@@ -56,7 +65,7 @@ public class ApplicationConfiguration implements WebMvcConfigurer {
 		bean.setSuffix(".html");
 		return bean;
 	}
-
+*/
 
 
 	/*

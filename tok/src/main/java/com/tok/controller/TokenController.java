@@ -18,7 +18,7 @@ import com.tok.service.TokenServiceImpl;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/token")
+@RequestMapping("/")
 public class TokenController {
 
 	@Autowired

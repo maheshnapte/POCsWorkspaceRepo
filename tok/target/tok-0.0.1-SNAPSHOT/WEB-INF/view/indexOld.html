@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<head>
+<title>Tokens</title>
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+<link href="<c:url value="/assset/myCss.css" />" rel="stylesheet">
+<!-- <script src="/assets/myscripts.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/myCss.css"> -->
+<html>
+<body>
+	<h1>Hello world!</h1>
+</body>
+</html>
+
+<!--  <script>
+ $(document).ready(function(){
+	  $("button").click(function(){
+		  $.ajax('/getToken', 
+				  {
+				      dataType: 'json', // type of response data
+				      timeout: 500,     // timeout milliseconds
+				      success: function (data,status,xhr) {   // success callback function
+				          $('p').append(data.tokId + ' ' + data.tokenName);
+				      },
+				      error: function (jqXhr, textStatus, errorMessage) { // error callback 
+				          $('p').append('Error: ' + errorMessage);
+				      }
+				  });
+	  });
+	});
+</script> -->
+</head>
+<body>
+
+	<h2 class="mah">This is a heading</h2>
+
+	<p>This is a paragraph.</p>
+
+
+	<button>Click Me</button>
+
+</body>
+</html>
