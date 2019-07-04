@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tok.dao.TokenDAO;
 import com.tok.model.Token;
+import com.tok.model.Tokens;
 
 @Service
 public class TokenServiceImpl implements TokenService {
@@ -26,6 +27,12 @@ public class TokenServiceImpl implements TokenService {
 	public void add(Token token) {
 		// TODO Auto-generated method stub
 		tokenDAO.add(token);
+	}
+
+	@Override
+	public Tokens getTokenP(Tokens tokens) {
+		// TODO Auto-generated method stub
+		return tokenDAO.getTokenP(tokens);
 	}
 	
 	

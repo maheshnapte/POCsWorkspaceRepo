@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tok.model.Token;
+import com.tok.model.Tokens;
 import com.tok.service.TokenService;
 import com.tok.service.TokenServiceImpl;
 
@@ -48,6 +49,12 @@ public class TokenController {
 	public Token getToken() {
 		System.out.println("Before calling getTokenService");
 		return tokenService.getToken();
+	}
+	
+	@RequestMapping(value = "/getTokenP", method = RequestMethod.POST)
+	public Tokens getTokenP(@RequestBody Tokens tokens) {
+		System.out.println("Before calling getTokenService");
+		return tokenService.getTokenP(tokens);
 	}
 	
 	@RequestMapping(value = "/addToken", method = RequestMethod.POST)

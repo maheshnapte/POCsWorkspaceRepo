@@ -1,5 +1,6 @@
 package com.tok.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.TypedQuery;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.tok.model.Token;
+import com.tok.model.Tokens;
 
 @Repository
 public class TokenImpl implements TokenDAO {
@@ -37,6 +39,14 @@ public class TokenImpl implements TokenDAO {
 	public void add(Token token) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().save(token);	
+	}
+
+	@Override
+	public Tokens getTokenP(Tokens tokens) {
+		// TODO Auto-generated method stub
+		Serializable i = sessionFactory.getCurrentSession().save(tokens);
+		System.out.println("i: "+i);
+		return tokens;
 	}
 
 }

@@ -18,7 +18,24 @@
 <body>
 	<p class="mah">Mahesh</p>
 
-	<button>Click Me</button>
+	<button>Get Token</button>
+	<input type="text" name="token" readonly>
+	<br>
+
+	<form action="index.jsp">
+		<input type="text" name="uname" value="Name..." onclick="this.value=''" /><br /> 
+		<input type="text" name="uemail" value="Email ID..." onclick="this.value=''" /><br />
+		<input type="password" name="upass" value="Password..." onclick="this.value=''" /><br />
+		<input type="submit" value="register" />
+	</form>
+
+      <form id="tok_form" action="getTokenP" method="post">
+         Name : <input type = "text" name = "name" />
+         <br>
+         Mobile Number : <input type = "text" name = "mob_no" />
+         <input type = "reset" name = "reset"  value = "Reset" />
+         <input type = "submit" name = "submit" value = "Submit" />         
+      </form>
 
 </body>
 </html>
