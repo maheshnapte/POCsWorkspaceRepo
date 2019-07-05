@@ -30,6 +30,7 @@ public class TokenServiceImpl implements TokenService {
 	}
 
 	@Override
+	@Transactional
 	public Tokens getTokenP(Tokens tokens) {
 		// TODO Auto-generated method stub
 		return tokenDAO.getTokenP(tokens);
