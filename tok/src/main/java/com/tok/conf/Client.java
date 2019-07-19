@@ -14,6 +14,7 @@ import com.tok.controller.TokenController;
 public class Client {
 	final static Logger LOGGER = Logger.getLogger(TokenController.class);
 
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
+	
 	//private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
 /*	@ExceptionHandler(SQLException.class)

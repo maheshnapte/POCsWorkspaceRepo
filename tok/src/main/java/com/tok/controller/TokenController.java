@@ -33,6 +33,7 @@ import com.tok.service.TokenServiceImpl;
 public class TokenController {
 	final static Logger LOGGER = Logger.getLogger(TokenController.class);
 
+	
 	@Autowired
 	TokenService tokenService;
 
