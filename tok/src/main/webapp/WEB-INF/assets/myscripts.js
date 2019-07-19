@@ -1,46 +1,43 @@
 $(document).ready(function() {
 	$("button").click(function() {
-
-		/* $.ajax({
-		       type: 'GET',
-		       url: rootURL,
-		       dataType: "json", // data type of response
-		       success: renderList
-		   });*/
-
 		$.ajax('getToken', {
 			dataType : 'json', // type of response data
 			timeout : 500, // timeout milliseconds
-			success : function(data, status, xhr) { // success callback function
+			success : function(data, status, xhr) { // success callback
+				// function
 				$('p').append(data.tokId + ' ' + data.tokenId);
 			},
-			error : function(jqXhr, textStatus, errorMessage) { // error callback 
+			error : function(jqXhr, textStatus, errorMessage) { // error
+				// callback
 				$('p').append('Error: ' + errorMessage);
 			}
 		});
 	});
 
-	$("#tok_form").submit(function(e) {
-		e.preventDefault(); // avoid to execute the actual submit of the form.
-
+	$("#fSub").click(function(e) {
+		e.preventDefault(); // avoid to execute the actual
+		// submit of the form.
 		var form = $(this);
-		var url = form.attr('action');
+		var myData = new Object();
+		myData.name = $("#name_").val();
+		myData.mobileNo = $("#mob_").val();
 
 		$.ajax({
+			datatype : "application/json",
+			contentType : "application/json",
 			type : "POST",
-			dataType : 'json', // type of response data
-			timeout : 500, // timeout milliseconds
-			success : function(data, status, xhr) { // success callback function
-				$('p').append(data.tokId + ' ' + data.tokenId);
+			url : "getTokenP", // type of response data
+			data : JSON.stringify(myData),
+			success : function(data, status, xhr) { // success
+				// callback
+				// function
+				$('#token').text(data.token);
 			},
-			error : function(jqXhr, textStatus, errorMessage) { // error callback 
+			error : function(jqXhr, textStatus, errorMessage) { // error
+				// callback
 				$('p').append('Error: ' + errorMessage);
 			}
 
-		//type: "POST",
-		/*      url: url,
-		      data: form.serialize(), // serializes the form's elements.
-		 */
 		});
 
 	});
