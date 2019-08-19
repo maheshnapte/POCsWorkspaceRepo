@@ -1,0 +1,4 @@
+I have created first web dynamic project.
+then converted it into maven project.
+Note: here, WebContent folder is created whereas in normal maven project src.main.webapp folder is created.
+
